@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#personal data to do not upload to Github
+PrivateData.py

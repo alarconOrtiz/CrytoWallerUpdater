@@ -20,8 +20,9 @@ session.headers.update(headers)
 
 try:
   response = session.get(url, params=parameters)
-  data = json.loads(response.text)
-  print(data)
+  responseJson = json.loads(response.text)
+  #soup = BeautifulSoup(data,'html.parser')
+  print()
 except (ConnectionError, Timeout, TooManyRedirects) as e:
   print(e)
   

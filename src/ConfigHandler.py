@@ -1,4 +1,4 @@
-import ConfigParser
+import configparser
 import io
 
 class ConfigHandler:
@@ -7,10 +7,10 @@ class ConfigHandler:
         self.crypto_coins = {}
         self.excell_path  = "crytoWallet.ex" 
     
-    def read_file():
+    def read_file(self):
         with open(self.file_path_config) as f:
             config_file = f.read()
-            config = ConfigParser.RawConfigParser(allow_no_value=True)
+            config = configparser.RawConfigParser(allow_no_value=True)
             config.readfp(io.BytesIO(self.file_path_config))
             
             #read al coin in config file
@@ -21,8 +21,7 @@ class ConfigHandler:
                     coin = config.get('cryptocoin','coin{}'.format(index_coin))
                     self.crypto_coins.append( coin )
                     index_coin= index_coin + 1
-                except
+                except Exception as e:
                     next_coin = False
-            #read paths
-                pass
+            
     
